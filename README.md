@@ -1,8 +1,8 @@
-reefer_mon_pipeline
+ReeferMonPipeline
 ===================
 
-Monitor the transit of sensitive cargo
+[ReeferMon] (http://reefermon.com) monitors the transit of sensitive cargo, measuring GPS location, temperature, humidity, etc.
 
-=== Pipeline ===
+# The Data Pipeline
 
-This is the pipeline
+![Alt Text](https://github.com/jsvirzi/reefer_mon_pipeline/blob/master/images/pipeline.png "Data Pipeline")
