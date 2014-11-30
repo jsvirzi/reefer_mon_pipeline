@@ -1,9 +1,17 @@
-The C driver to Kafka
+## The C driver to Kafka
+
+The C/C++ driver can be found at [driver](https://github.com/edenhill/librdkafka), 
+and I simply echo most of the simple commands for the sake of simplicity and completeness
 
 mkdir -p ${HOME}/projects
+
 cd ${HOME}/projects
+
 git clone https://github.com/edenhill/librdkafka.git
-# sudo ./configure
+
+sudo ./configure
+make
+sudo make install
 
 The C driver makes use of the following Z utility
 
