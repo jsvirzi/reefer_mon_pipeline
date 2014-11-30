@@ -1,8 +1,9 @@
-## The C driver to Kafka
+## The C/C++ driver to Kafka
 
 The C/C++ driver can be found at [driver](https://github.com/edenhill/librdkafka), 
 and I simply echo most of the simple commands for the sake of simplicity and completeness
 
+[verbatim]
 mkdir -p ${HOME}/projects
 
 cd ${HOME}/projects
