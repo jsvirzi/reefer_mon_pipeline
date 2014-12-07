@@ -1,5 +1,7 @@
 #include "stm32l0xx_hal.h"
 
+#include <stdio.h>
+
 UART_HandleTypeDef huart1;
 static void MX_USART1_UART_Init(void);
 
@@ -10,11 +12,11 @@ char uart_lut[0x10] = {
 	'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'
 };
 
-int uart_init() {
+void uart_init() {
   MX_USART1_UART_Init();
 }
 
-int uart_send_string(char *s) {
+void uart_send_string(char *s) {
 	int len = strlen(s);
 	char ch;
 	while(len--) {
@@ -22,7 +24,6 @@ int uart_send_string(char *s) {
 		while((huart1.Instance->ISR & UART_TXE) == 0);
 		huart1.Instance->TDR = ch;
 	}
-	return 0;
 }
 
 int uart_send(int val) {

@@ -1,6 +1,7 @@
 #include "stm32l0xx_hal.h"
 #include "i2c.h"
 #include "temperature_humidity.h"
+#include "uart.h"
 
 #include <stdio.h>
 
@@ -16,6 +17,28 @@ static void MX_I2C1_Init(void);
 /* for use anywhere */
 char gp_str[1024];
 
+int val;
+
+int read_thermopile() {
+	unsigned char addr = 0x1d;
+	
+	i2c_start_condition();
+	i2c_send_char(addr << 1);
+	int j = i2c_wait_ack();
+	if(j == 1)
+	uart_send_string("blah");
+	i2c_send_char(0xfe);
+	i2c_wait_ack();
+	i2c_start_condition();
+	i2c_send_char((addr << 1) | 1);
+	i2c_wait_ack();
+	val = i2c_read_char();
+	i2c_send_ack();
+	val = i2c_read_char();
+	i2c_send_nack();
+	i2c_stop_condition();
+}
+
 int main(void) {
 
   HAL_Init(); /* reset all peripherals, init flash interface and systick. */
@@ -25,6 +48,8 @@ int main(void) {
   /* initialize all configured peripherals */
   MX_GPIO_Init(); /* i2c is being bit-banged */
 	uart_init();
+	
+	read_thermopile();
 	
 	while(1) {
 		int temperature, humidity;
@@ -38,7 +63,7 @@ int main(void) {
 		uart_send_string(gp_str);
 	}
 	
-	read_temperature_user_register();
+//	read_temperature_user_register();
 //	read_temperature_sensor_firmware();
 //	read_temperature_sensor_serial_number();
 
@@ -84,17 +109,19 @@ void MX_GPIO_Init(void) { /* gpio configuration */
   __GPIOA_CLK_ENABLE();
   __GPIOB_CLK_ENABLE();
 
-	GPIO_Init.Pin = GPIO_PIN_6;
+	GPIO_Init.Pin = GPIO_PIN_6 | GPIO_PIN_7;
 	GPIO_Init.Speed = GPIO_SPEED_HIGH;
 	GPIO_Init.Mode = GPIO_MODE_OUTPUT_OD;
 	GPIO_Init.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOB, &GPIO_Init);
 	
+#if 0
 	GPIO_Init.Pin = GPIO_PIN_7;
 	GPIO_Init.Speed = GPIO_SPEED_HIGH;
 	GPIO_Init.Mode = GPIO_MODE_OUTPUT_OD;
 	GPIO_Init.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOB, &GPIO_Init);
+#endif
 	
 	status = GPIOB->IDR;
 }
