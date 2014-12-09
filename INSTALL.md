@@ -35,3 +35,55 @@ To use ROOT in your project, add the following lines in your Makefile
 ## Installing Kafka
 
 ## Installing BCM2835 GPIO Library
+
+## Installing Firmware Onto Raspberry Pi
+
+These instructions are line-by-line instructions to tether the Raspberry Pi to the iPhone.
+
+After burning the image of Wheezy Raspbian onto the Raspberry, 
+and booting up with an internet connection,
+run the following command to update all installed packages
+
+    sudo apt-get update
+    
+Then, to install the necessary packages to tether the iPhone to the Raspberry Pi,
+perform the following commands (taken directly from Dave Conroy's [page](http://www.daveconroy.com/how-to-tether-your-raspberry-pi-with-your-iphone-5/))
+
+    sudo apt-get install gvfs ipheth-utils
+    sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse
+    sudo apt-get install ifuse
+    
+Thereafter, run
+
+    ifconfig -s
+    
+to see the network devices that are connected. 
+Proceed to connect the iPhone to the USB port,
+and reboot the Raspberry Pi
+
+    sudo reboot
+    
+Run the "ifconfig -s" command again to see where the operating system placed the iPhone.
+For the sake of argument, let's assume the OS placed the iPhone as "eth1".
+Edit the file "/etc/network/interfaces", and add the following lines:
+
+    allow-hotplug eth1
+    iface eth1 inet dhcp
+
+Restart the network. 
+Note: I haven't always had luck with this command to bring up all the interfaces.
+
+    sudo /etc/init.d/networking restart
+
+If that doesn't work
+
+    sudo reboot
+    
+Run the following commands:
+
+    sudo mkdir /media/iPhone
+    sudo ifuse /media/iPhone
+    
+    
+    
+
