@@ -52,6 +52,7 @@ perform the following commands (taken directly from Dave Conroy's [page](http://
     sudo apt-get install gvfs ipheth-utils
     sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse
     sudo apt-get install ifuse
+    sudo mkdir /media/iPhone
     
 Thereafter, run
 
@@ -70,20 +71,16 @@ Edit the file "/etc/network/interfaces", and add the following lines:
     allow-hotplug eth1
     iface eth1 inet dhcp
 
-Restart the network. 
-Note: I haven't always had luck with this command to bring up all the interfaces.
-
-    sudo /etc/init.d/networking restart
-
-If that doesn't work
+Disconnect the ethernet cable (for eth0) and reboot the system.
+In principle one could restart the network,
+but this works for me and I haven't had much luck with the network restart (sudo /etc/init.d/networking (re)start).
 
     sudo reboot
     
-Run the following commands:
+After rebooting,  and run the following commands:
 
-    sudo mkdir /media/iPhone
     sudo ifuse /media/iPhone
     
-    
+The iPhone should be tethered.
     
 
