@@ -15,10 +15,31 @@ This doesn't have to be a Raspberry Pi; it could be the image of any disk.
 
     dd if=/dev/sdb of=raspi.img 
     cp raspi.img test.img
-    sudo losetup -f --show test.img /dev/loop1
-    sudo fdisk -l /dev/loop1
+    sudo losetup -f --show test.img
+    
+The (example) output of the previous command:
+
+    /dev/loop0
+
+That argument is used in the following commands.
+It could be "/dev/loop1" for example.
+
+    sudo fdisk -l /dev/loop0
     
 You should be looking at a screen that looks something like this:
+
+    Disk /dev/loop0: 16.0 GB, 16009658368 bytes
+    255 heads, 63 sectors/track, 1946 cylinders, total 31268864 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x000b5098
+
+      Device Boot      Start         End      Blocks   Id  System
+    /dev/loop0p1            8192      122879       57344    c  W95 FAT32 (LBA)
+    /dev/loop0p2          122880    31268863    15572992   83  Linux
+
+
 
     sudo fdisk -l /dev/mmcblk0
     sudo losetup -f --show -o 62914560 test.img /dev/loop2
