@@ -18,3 +18,10 @@ https://github.com/chenkelmann/actuarius/wiki/A-Short-Introduction-To-Markdown-S
 
 [BCM2835](http://www.raspberry-projects.com/pi/programming-in-c/c-libraries/bcm2835-by-mike-mccauley)
 [Program Example](http://www.airspayce.com/mikem/bcm2835/blink_8c-example.html)
+
+## Managing Network Connections on the Raspberry Pi
+
+    sudo vi /etc/network/interfaces
+    sudo /etc/init.d/networking restart
+
+    
