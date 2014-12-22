@@ -34,6 +34,8 @@ To use ROOT in your project, add the following lines in your Makefile
 
 ## Installing BCM2835 GPIO Library
 
+    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.37.tar.gz
+
 ## Installing Firmware Onto Raspberry Pi
 
 These instructions are line-by-line instructions to tether the Raspberry Pi to the iPhone.
@@ -128,12 +130,15 @@ More commands, and some of them overlap with the previous steps
 
 ## Installing WiringPi
 
-    mkdir -p ${HOME}/projects
-    cd -p ${HOME}/projects
+    # mkdir -p ${HOME}/projects
+    cd ${HOME}/projects
     git clone git://git.drogon.net/wiringPi
     cd wiringPi
     ./build
 
-    
+## Installing BCM2835 GPIO Library
+
+    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.37.tar.gz
+
 
 
