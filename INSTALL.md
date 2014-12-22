@@ -100,7 +100,12 @@ Reboot the system. Then perform the following steps steps
     
 ## Other steps
 
+### installing pip
     sudo apt-get install python-setuptools
+    sudo easy_install pip
+    
+### needed for the console
+    sudo pip install netifaces
     
 
 
