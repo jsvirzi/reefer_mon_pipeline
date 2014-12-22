@@ -138,7 +138,15 @@ More commands, and some of them overlap with the previous steps
 
 ## Installing BCM2835 GPIO Library
 
+    # mkdir -p ${HOME}/projects
+    cd ${HOME}/projects
     wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.37.tar.gz
+    tar -xzvf bcm2835-1.37.tar.gz
+    cd bcm2835-1.37
+    ./configure
+    make
+    sudo make check
+    sudo make install
 
 
 
