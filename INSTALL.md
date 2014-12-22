@@ -82,5 +82,7 @@ After rebooting,  and run the following commands:
     sudo ifuse /media/iPhone
     
 The iPhone should be tethered.
+
+## Installing I2C
     
 
