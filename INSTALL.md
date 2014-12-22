@@ -83,9 +83,29 @@ After rebooting,  and run the following commands:
     
 The iPhone should be tethered.
 
+## First steps to build a new working Raspberry Pi
+
+    sudo apt-get update
+
+    sudo apt-get install cvs
+    sudo apt-get install make
+    sudo apt-get install git
+    sudo apt-get install gcc
+    sudo apt-get install g++
+    sudo apt-get install python2.7-dev
+
+### installing pip
+
+    sudo apt-get install python-setuptools
+    sudo easy_install pip
+    
+### needed for the console
+
+    sudo pip install netifaces
+    
 ## Installing I2C
 
-These instructions are taken from the [Adafruit page](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/usage), 
+Most of these instructions are taken from the [Adafruit page](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/usage), 
 but are shown here to have them in one place
 
 First, one must edit "/etc/modules" and add the following lines at the end to enable the i2c driver
@@ -97,15 +117,6 @@ Reboot the system. Then perform the following steps steps
 
     sudo apt-get install python-smbus
     sudo apt-get install i2c-tools
-    
-## Other steps
-
-### installing pip
-    sudo apt-get install python-setuptools
-    sudo easy_install pip
-    
-### needed for the console
-    sudo pip install netifaces
     
 
 
