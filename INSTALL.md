@@ -32,10 +32,6 @@ To use ROOT in your project, add the following lines in your Makefile
 
 ## Installing Kafka
 
-## Installing BCM2835 GPIO Library
-
-    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.37.tar.gz
-
 ## Installing Firmware Onto Raspberry Pi
 
 These instructions are line-by-line instructions to tether the Raspberry Pi to the iPhone.
@@ -103,7 +99,7 @@ The iPhone should be tethered.
 
     sudo pip install netifaces
     
-## Installing I2C
+### Installing I2C
 
 Most of these instructions are taken from the [Adafruit page](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/usage), 
 but are shown here to have them in one place
@@ -112,13 +108,18 @@ First, one must edit "/etc/modules" and add the following lines at the end to en
 
     i2c-bcm2708
     i2c-dev
-    
-Reboot the system. Then perform the following steps steps
+
+The driver will be enabled upon subsequent reboot of the system.
+Continue without rebooting the remaining steps, 
+keeping in mind that a reboot will be necessary before using the new system.
+
+Continuing on...
 
     sudo apt-get install python-smbus
     sudo apt-get install i2c-tools
 
-More commands, and some of them overlap with the previous steps
+More commands, and some of them overlap with the previous steps.
+They are kept here because they were copied/pasted from another site.
 
     sudo apt-get install build-essential python-dev python-smbus python-pip git
     sudo pip install RPi.GPIO
@@ -128,7 +129,7 @@ More commands, and some of them overlap with the previous steps
     cd Adafruit_Python_CharLCD
     sudo python setup.py install
 
-## Installing WiringPi
+### Installing WiringPi
 
     # mkdir -p ${HOME}/projects
     cd ${HOME}/projects
