@@ -122,6 +122,8 @@ More commands, and some of them overlap with the previous steps
 
     sudo apt-get install build-essential python-dev python-smbus python-pip git
     sudo pip install RPi.GPIO
+    mkdir ${HOME}/projects
+    cd ${HOME}/projects
     git clone https://github.com/adafruit/Adafruit_Python_CharLCD.git
     cd Adafruit_Python_CharLCD
     sudo python setup.py install
