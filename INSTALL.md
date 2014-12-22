@@ -28,8 +28,6 @@ To use ROOT in your project, add the following lines in your Makefile
     ROOTINCS = -I$(shell root-config --incdir)
     ROOTLIBS := $(shell root-config --libs) $(shell root-config --auxlibs)
     
-## Installing WiringPi
-
 ## Installing Cassandra
 
 ## Installing Kafka
@@ -127,6 +125,14 @@ More commands, and some of them overlap with the previous steps
     git clone https://github.com/adafruit/Adafruit_Python_CharLCD.git
     cd Adafruit_Python_CharLCD
     sudo python setup.py install
+
+## Installing WiringPi
+
+    mkdir -p ${HOME}/projects
+    cd -p ${HOME}/projects
+    git clone git://git.drogon.net/wiringPi
+    cd wiringPi
+    ./build
 
     
 
