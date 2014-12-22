@@ -84,5 +84,19 @@ After rebooting,  and run the following commands:
 The iPhone should be tethered.
 
 ## Installing I2C
+
+These instructions are taken from the [Adafruit page](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/usage), 
+but are shown here to have them in one place
+
+First, one must edit "/etc/modules" and add the following lines at the end to enable the i2c driver
+
+    i2c-bcm2708
+    i2c-dev
     
+Reboot the system. Then perform the following steps steps
+
+    sudo apt-get install python-smbus
+    sudo apt-get install i2c-tools
+    
+
 
