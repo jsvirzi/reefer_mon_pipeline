@@ -98,5 +98,9 @@ Reboot the system. Then perform the following steps steps
     sudo apt-get install python-smbus
     sudo apt-get install i2c-tools
     
+## Other steps
+
+    sudo apt-get install python-setuptools
+    
 
 
