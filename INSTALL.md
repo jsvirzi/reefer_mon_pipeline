@@ -32,53 +32,6 @@ To use ROOT in your project, add the following lines in your Makefile
 
 ## Installing Kafka
 
-## Installing Firmware Onto Raspberry Pi
-
-These instructions are line-by-line instructions to tether the Raspberry Pi to the iPhone.
-
-After burning the image of Wheezy Raspbian onto the Raspberry, 
-and booting up with an internet connection,
-run the following command to update all installed packages
-
-    sudo apt-get update
-    
-Then, to install the necessary packages to tether the iPhone to the Raspberry Pi,
-perform the following commands (taken directly from Dave Conroy's [page](http://www.daveconroy.com/how-to-tether-your-raspberry-pi-with-your-iphone-5/))
-
-    sudo apt-get install gvfs ipheth-utils
-    sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse
-    sudo apt-get install ifuse
-    sudo mkdir /media/iPhone
-    
-Thereafter, run
-
-    ifconfig -s
-    
-to see the network devices that are connected. 
-Proceed to connect the iPhone to the USB port,
-and reboot the Raspberry Pi
-
-    sudo reboot
-    
-Run the "ifconfig -s" command again to see where the operating system placed the iPhone.
-For the sake of argument, let's assume the OS placed the iPhone as "eth1".
-Edit the file "/etc/network/interfaces", and add the following lines:
-
-    allow-hotplug eth1
-    iface eth1 inet dhcp
-
-Disconnect the ethernet cable (for eth0) and reboot the system.
-In principle one could restart the network,
-but this works for me and I haven't had much luck with the network restart (sudo /etc/init.d/networking (re)start).
-
-    sudo reboot
-    
-After rebooting,  and run the following commands:
-
-    sudo ifuse /media/iPhone
-    
-The iPhone should be tethered.
-
 ## First steps to build a new working Raspberry Pi
 
     sudo apt-get update
@@ -148,6 +101,55 @@ They are kept here because they were copied/pasted from another site.
     make
     sudo make check
     sudo make install
+
+### Tether iPhone Onto Raspberry Pi
+
+These instructions are line-by-line instructions to tether the Raspberry Pi to the iPhone.
+They are stated here in stand-alone format,
+but are intended to be executed after the above section(s) for installing a new Raspberry Pi.
+
+After burning the image of Wheezy Raspbian onto the Raspberry, 
+and booting up with an internet connection,
+run the following command to update all installed packages
+
+    sudo apt-get update
+    
+Then, to install the necessary packages to tether the iPhone to the Raspberry Pi,
+perform the following commands (taken directly from Dave Conroy's [page](http://www.daveconroy.com/how-to-tether-your-raspberry-pi-with-your-iphone-5/))
+
+    sudo apt-get install gvfs ipheth-utils
+    sudo apt-get install libimobiledevice-utils gvfs-backends gvfs-bin gvfs-fuse
+    sudo apt-get install ifuse
+    sudo mkdir /media/iPhone
+    
+Thereafter, run
+
+    ifconfig -s
+    
+to see the network devices that are connected. 
+Proceed to connect the iPhone to the USB port,
+and reboot the Raspberry Pi
+
+    sudo reboot
+    
+Run the "ifconfig -s" command again to see where the operating system placed the iPhone.
+For the sake of argument, let's assume the OS placed the iPhone as "eth1".
+Edit the file "/etc/network/interfaces", and add the following lines:
+
+    allow-hotplug eth1
+    iface eth1 inet dhcp
+
+Disconnect the ethernet cable (for eth0) and reboot the system.
+In principle one could restart the network,
+but this works for me and I haven't had much luck with the network restart (sudo /etc/init.d/networking (re)start).
+
+    sudo reboot
+    
+After rebooting,  and run the following commands:
+
+    sudo ifuse /media/iPhone
+    
+The iPhone should be tethered.
 
 
 
