@@ -24,4 +24,10 @@ https://github.com/chenkelmann/actuarius/wiki/A-Short-Introduction-To-Markdown-S
     sudo vi /etc/network/interfaces
     sudo /etc/init.d/networking restart
 
-    
+## LCD and Pushbutton Management vis-a-vis MCP23017
+
+http://www.eeherald.com/section/design-guide/sample_lcd_c_programs.html
+
+
+
+
