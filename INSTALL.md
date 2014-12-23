@@ -1,7 +1,9 @@
-## Installing ROOT from source
+## Installing a new Ubuntu 14.04 Server
+
+### Installing ROOT from source
 
 To install CERN ROOT on Ubuntu 14.04, it has been advised to use at least the following version.
-Previous versions do not compile, at least without grief
+Previous versions do not compile, at least not without grief
 
     cd ${HOME}/projects
     
