@@ -1,5 +1,14 @@
 These are URLs and other references which have proven useful in these sort of projects
 
+## OSEPP I2C PinOut
+
+    Pin 1 = VCC
+    Pin 2 = I2C DATA
+    Pin 3 = GND
+    Pin 4 = I2C CLK
+    
+## GPS Distance Formulae
+
 The haversine formula for calculating distance between two points specified in LAT/LON is described
 [http://www.movable-type.co.uk/scripts/latlong.html] (http://www.movable-type.co.uk/scripts/latlong.html)
 
