@@ -40,6 +40,15 @@ http://www.eeherald.com/section/design-guide/sample_lcd_c_programs.html
 ## Serial Port Programming References
 [Blocking/Nonblocking/Canonical Mode](http://stackoverflow.com/questions/25996171/linux-blocking-vs-non-blocking-serial-read)
 
+## UVC
+
+[Dynamic Controls](http://ivanz.com/files/projects/linux-kernel/isight/against-revision-140/src/dynctrl.txt)
+[Dynamic Controls](http://tomoyo.osdn.jp/cgi-bin/lxr/source/Documentation/video4linux/uvcvideo.txt)
+[
+
+## CVS
+[CVS](http://jsvirzi.dyndns.org/cgi-bin/viewvc.cgi/reefer_mon_pipeline/cyclops)
+
 
 
 
