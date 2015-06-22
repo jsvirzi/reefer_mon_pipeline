@@ -12,6 +12,10 @@ These are URLs and other references which have proven useful in these sort of pr
 The haversine formula for calculating distance between two points specified in LAT/LON is described
 [http://www.movable-type.co.uk/scripts/latlong.html] (http://www.movable-type.co.uk/scripts/latlong.html)
 
+### NMEA to LAT/LON conversion
+
+[here](https://community.oracle.com/message/12679499)
+
 ## GoogleMaps API References
 
 http://stackoverflow.com/questions/6048975/google-maps-v3-how-to-calculate-the-zoom-level-for-a-given-bounds
@@ -44,7 +48,10 @@ http://www.eeherald.com/section/design-guide/sample_lcd_c_programs.html
 
 [Dynamic Controls](http://ivanz.com/files/projects/linux-kernel/isight/against-revision-140/src/dynctrl.txt)
 [Dynamic Controls](http://tomoyo.osdn.jp/cgi-bin/lxr/source/Documentation/video4linux/uvcvideo.txt)
-[
+[Video4Linux Caps](http://v4l.videotechnology.com/dwg/v4l2api/v4l2cap.htm)
+[Video4Linux Dev](http://v4l.videotechnology.com/dwg/v4l2api/v4l2dev.htm)
+[Video4Linux REQBUF](http://linuxtv.org/downloads/v4l-dvb-apis/vidioc-reqbufs.html)
+[Video4Linux API](http://linuxtv.org/downloads/v4l-dvb-apis/)
 
 ## CVS
 [CVS](http://jsvirzi.dyndns.org/cgi-bin/viewvc.cgi/reefer_mon_pipeline/cyclops)
