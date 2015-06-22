@@ -37,6 +37,9 @@ https://github.com/chenkelmann/actuarius/wiki/A-Short-Introduction-To-Markdown-S
 
 http://www.eeherald.com/section/design-guide/sample_lcd_c_programs.html
 
+## Serial Port Programming References
+[Blocking/Nonblocking/Canonical Mode](http://stackoverflow.com/questions/25996171/linux-blocking-vs-non-blocking-serial-read)
+
 
 
 
